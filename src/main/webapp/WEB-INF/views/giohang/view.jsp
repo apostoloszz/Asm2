@@ -5,6 +5,11 @@
 </head>
 <body>
 <h1>Giỏ hàng của bạn</h1>
+
+<c:if test="${empty gioHangItems}">
+    <p>Giỏ hàng của bạn hiện đang trống.</p>
+</c:if>
+
 <c:forEach var="item" items="${gioHangItems}">
     <div>
         <h2>${item.sanpham.ten}</h2>
@@ -16,6 +21,13 @@
         </form>
     </div>
 </c:forEach>
+
+<c:set var="totalPrice" value="0" />
+<c:forEach var="item" items="${gioHangItems}">
+    <c:set var="totalPrice" value="${totalPrice + (item.sanpham.gia * item.quantity)}" />
+</c:forEach>
+<p>Tổng chi phí: ${totalPrice}</p>
+
 <a href="<c:url value='/sanphams' />">Tiếp tục mua sắm</a>
 <a href="<c:url value='/donhangs' />">Đặt hàng</a>
 </body>

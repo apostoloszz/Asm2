@@ -1,7 +1,8 @@
 package com.example.asm2.entity;
 
 public class GioHangItem {
-    private Long sanphamId;
+    private Sanpham sanpham;
+    private Long sanphamId;  // ID của sản phẩm
     private int quantity;
 
     public GioHangItem(Long sanphamId, int quantity) {

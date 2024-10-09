@@ -30,4 +30,10 @@ public class Sanpham {
     @OneToMany(mappedBy = "sanpham")
     private List<Thuoctinhsanpham> thuoctinhsanphamList;
 
+    public BigDecimal giaSauGiam() {
+        if (chietkhau != null && chietkhau > 0) {
+            return gia.subtract(gia.multiply(BigDecimal.valueOf(chietkhau)).divide(BigDecimal.valueOf(100)));
+        }
+        return gia;
+    }
 }

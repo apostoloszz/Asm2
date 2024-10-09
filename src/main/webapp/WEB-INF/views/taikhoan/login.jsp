@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Đăng nhập</h1>
-<form action="<c:url value='/login' />" method="post">
+<form action="<c:url value='/login' />" method="post" >
     <div>
         <label for="username">Tên đăng nhập:</label>
         <input type="text" id="username" name="username" required />

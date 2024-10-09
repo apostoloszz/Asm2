@@ -16,7 +16,6 @@ public class TaiKhoanService {
     private PasswordEncoder passwordEncoder;
 
     public void register(Taikhoan taiKhoan) {
-        // Encode the password before saving
         taiKhoan.setPassword(passwordEncoder.encode(taiKhoan.getPassword()));
         taiKhoanRepository.save(taiKhoan);
     }

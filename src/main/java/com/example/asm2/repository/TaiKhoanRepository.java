@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface TaiKhoanRepository extends JpaRepository<Taikhoan, Long> {
+public interface TaiKhoanRepository extends JpaRepository<Taikhoan, Integer> {
     Taikhoan findByUsername(String username);
     // Bạn có thể thêm các phương thức truy vấn tùy chỉnh ở đây nếu cần
 }
